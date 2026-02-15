@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">IMG</string>
+    <string name="back_to_animals">Back To Animals</string>
+    <string name="greeting">Bonjour %s</string>
+    <string name="activities_title">Activités des chiffres</string>
+    <string name="activities_animals">Activités des Animaux</string>
+    <string name="chiffre_format">Chiffre %d</string>
+    <string name="welcome_title">Bienvenue !</string>
+    <string name="start_button">Démarrer</string>
+    <string name="name_hint">Nom</string>
+    <string name="firstname_hint">Prénom</string>
+    <string name="email_hint">Email</string>
+    <string name="return_button">Retour</string>
+    <string name="notifications_title">Notifications</string>
+    <string name="btn_toast_short">Toast Léger</string>
+    <string name="btn_toast_long">Toast Long</string>
+    <string name="btn_dialog_1">Dialogue (1 Bouton)</string>
+    <string name="btn_dialog_2">Dialogue (2 Boutons)</string>
+    <string name="btn_dialog_3">Dialogue (3 Boutons + Saisie)</string>
+</resources>

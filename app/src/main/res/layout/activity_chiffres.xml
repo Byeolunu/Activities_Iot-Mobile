@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#FFFAF0">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="32dp"
+        tools:context=".Chiffres">
+
+        <TextView
+            android:id="@+id/titleAnimaux"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/activities_title"
+            android:textColor="#E91E63"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/titleUnderline"
+            android:layout_width="100dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="4dp"
+            android:background="#E91E63"
+            app:layout_constraintEnd_toEndOf="@+id/titleAnimaux"
+            app:layout_constraintStart_toStartOf="@+id/titleAnimaux"
+            app:layout_constraintTop_toBottomOf="@+id/titleAnimaux" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:padding="16dp"
+            app:constraint_referenced_ids="i0,im1,im2,im3,im4,im5,im6,im7,im8,im9"
+            app:flow_horizontalGap="16dp"
+            app:flow_horizontalStyle="packed"
+            app:flow_maxElementsWrap="3"
+            app:flow_verticalGap="16dp"
+            app:flow_wrapMode="aligned"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleUnderline" />
+
+        <ImageView
+            android:id="@+id/i0"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/image_border"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/i0" />
+
+        <ImageView
+            android:id="@+id/im1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/image_border"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/i1" />
+
+        <ImageView
+            android:id="@+id/im2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/image_border"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/i2" />
+
+        <ImageView
+            android:id="@+id/im3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/image_border"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/i3" />
+
+        <ImageView
+            android:id="@+id/im4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/image_border"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/i4" />
+
+        <ImageView
+            android:id="@+id/im5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/image_border"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/i5" />
+
+        <ImageView
+            android:id="@+id/im6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/image_border"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/i6" />
+
+        <ImageView
+            android:id="@+id/im7"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/image_border"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/i7" />
+
+        <ImageView
+            android:id="@+id/im8"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/image_border"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/i8" />
+
+        <ImageView
+            android:id="@+id/im9"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/image_border"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/i9" />
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="#E91E63"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:text="@string/back_to_animals"
+            app:cornerRadius="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flow" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
