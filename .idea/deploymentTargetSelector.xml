@@ -11,9 +11,6 @@
       <SelectionState runConfigName="Multimedia">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Chiffres">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
       <SelectionState runConfigName="Notifications">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
