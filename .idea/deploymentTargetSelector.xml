@@ -11,10 +11,13 @@
       <SelectionState runConfigName="Multimedia">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Chiffres">
+      <SelectionState runConfigName="Notifications">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Notifications">
+      <SelectionState runConfigName="App_ListGridSpinner">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="GridActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
