@@ -1,11 +1,9 @@
 package com.example.app;
 
-import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,85 +13,42 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+public class RecyclerActivity extends AppCompatActivity {
 
-import java.util.ArrayList;
-import java.util.List;
+    String[] countries = {
+            "Maroc", "France", "USA", "Japon", "Canada",
+            "Allemagne", "Italie", "Brésil", "Argentine", "Égypte",
+            "Afrique du Sud", "Chine", "Inde", "Russie", "Mexique",
+            "Nigéria", "Corée du Sud"
+    };
 
-public class ListRecyclerActivity extends AppCompatActivity {
-
-    private List<Country> countryList;
-    private CountryRecyclerAdapter adapter;
-
+    int[] flags = {
+            R.drawable.maroc, R.drawable.france, R.drawable.usa, R.drawable.japon, R.drawable.canada,
+            R.drawable.allemagne, R.drawable.italy, R.drawable.brezil, R.drawable.argentina, R.drawable.egypte,
+            R.drawable.afs, R.drawable.china, R.drawable.india, R.drawable.russia, R.drawable.meique,
+            R.drawable.nigeria, R.drawable.south_korea
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_recycler);
 
-        initData();
-
         RecyclerView recyclerView = findViewById(R.id.rvCountries);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         
-        adapter = new CountryRecyclerAdapter(countryList);
+        CountryRecyclerAdapter adapter = new CountryRecyclerAdapter(countries, flags);
         recyclerView.setAdapter(adapter);
-
-        FloatingActionButton fab = findViewById(R.id.fabAdd);
-        fab.setOnClickListener(v -> showAddDialog());
-    }
-
-    private void initData() {
-        countryList = new ArrayList<>();
-        countryList.add(new Country("Maroc", R.drawable.maroc));
-        countryList.add(new Country("France", R.drawable.france));
-        countryList.add(new Country("USA", R.drawable.usa));
-    }
-
-    private void showAddDialog() {
-        EditText et = new EditText(this);
-        et.setHint("Nom du pays (ex: Japon)");
-        new AlertDialog.Builder(this)
-                .setTitle("Ajouter un pays")
-                .setView(et)
-                .setPositiveButton("Ajouter", (dialog, which) -> {
-                    String name = et.getText().toString().trim();
-                    if (!name.isEmpty()) {
-                        String resourceName = name.toLowerCase()
-                                .replace("é", "e").replace("è", "e")
-                                .replace("ê", "e").replace("ï", "i")
-                                .replace("ô", "o").replace(" ", "_");
-
-                        if (resourceName.equals("italie")) resourceName = "italy";
-                        if (resourceName.equals("argentine")) resourceName = "argentina";
-                        if (resourceName.equals("afrique_du_sud")) resourceName = "afs";
-                        if (resourceName.equals("bresil") || resourceName.equals("brésil")) resourceName = "brezil";
-                        if (resourceName.equals("mexique")) resourceName = "meique";
-                        if (resourceName.equals("chine")) resourceName = "china";
-                        if (resourceName.equals("inde")) resourceName = "india";
-                        if (resourceName.equals("russie")) resourceName = "russia";
-                        if (resourceName.equals("coree_du_sud") || resourceName.equals("corée_du_sud")) resourceName = "south_korea";
-
-                        int resId = getResources().getIdentifier(resourceName, "drawable", getPackageName());
-
-                        if (resId == 0) {
-                            resId = R.drawable.usa;
-                            Toast.makeText(this, "Drapeau non trouvé, icône par défaut utilisée", Toast.LENGTH_SHORT).show();
-                        }
-
-                        countryList.add(new Country(name, resId));
-                        adapter.notifyItemInserted(countryList.size() - 1);
-                    }
-                })
-                .setNegativeButton("Annuler", null)
-                .show();
     }
 
     class CountryRecyclerAdapter extends RecyclerView.Adapter<CountryRecyclerAdapter.ViewHolder> {
-        private List<Country> items;
 
-        public CountryRecyclerAdapter(List<Country> items) {
-            this.items = items;
+        private String[] countryNames;
+        private int[] countryFlags;
+
+        public CountryRecyclerAdapter(String[] names, int[] flags) {
+            this.countryNames = names;
+            this.countryFlags = flags;
         }
 
         @NonNull
@@ -105,42 +60,17 @@ public class ListRecyclerActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-            Country country = items.get(position);
-            holder.tvName.setText(country.getName());
-            holder.ivFlag.setImageResource(country.getFlagResource());
-
-            holder.itemView.setOnLongClickListener(v -> {
-                new AlertDialog.Builder(ListRecyclerActivity.this)
-                        .setTitle("Supprimer")
-                        .setMessage("Voulez-vous supprimer " + country.getName() + " ?")
-                        .setPositiveButton("Oui", (dialog, which) -> {
-                            int pos = holder.getAdapterPosition();
-                            items.remove(pos);
-                            notifyItemRemoved(pos);
-                        })
-                        .setNegativeButton("Non", null)
-                        .show();
-                return true;
-            });
-
-            holder.itemView.setOnClickListener(v -> {
-                EditText et = new EditText(ListRecyclerActivity.this);
-                et.setText(country.getName());
-                new AlertDialog.Builder(ListRecyclerActivity.this)
-                        .setTitle("Modifier")
-                        .setView(et)
-                        .setPositiveButton("Enregistrer", (dialog, which) -> {
-                            country.setName(et.getText().toString());
-                            notifyItemChanged(holder.getAdapterPosition());
-                        })
-                        .setNegativeButton("Annuler", null)
-                        .show();
-            });
+            holder.tvName.setText(countryNames[position]);
+            holder.ivFlag.setImageResource(countryFlags[position]);
+            
+            holder.itemView.setOnClickListener(v -> 
+                Toast.makeText(RecyclerActivity.this, countryNames[position], Toast.LENGTH_SHORT).show()
+            );
         }
 
         @Override
         public int getItemCount() {
-            return items.size();
+            return countryNames.length;
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
@@ -149,8 +79,8 @@ public class ListRecyclerActivity extends AppCompatActivity {
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
-                ivFlag = itemView.findViewById(R.id.countryFlag);
-                tvName = itemView.findViewById(R.id.countryName);
+                ivFlag = itemView.findViewById(R.id.ivFlag);
+                tvName = itemView.findViewById(R.id.tvCountryName);
             }
         }
     }
