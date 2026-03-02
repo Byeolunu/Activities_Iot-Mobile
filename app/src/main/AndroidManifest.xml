@@ -17,6 +17,8 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY">
+<!--            android:value="YOUR_API_KEY"-->
+        </meta-data>
 
         <activity
             android:name=".GridRecyclerActivity"

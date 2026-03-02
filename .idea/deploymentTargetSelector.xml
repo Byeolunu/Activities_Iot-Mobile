@@ -8,16 +8,16 @@
       <SelectionState runConfigName="Main1">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Multimedia">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
       <SelectionState runConfigName="Notifications">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="App_ListGridSpinner">
+      <SelectionState runConfigName="GridActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="GridActivity">
+      <SelectionState runConfigName="Chiffres">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="Multimedia">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

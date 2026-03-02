@@ -7,4 +7,34 @@
     android:layout_height="match_parent"
     tools:context=".GridActivity">
 
+    <GridView
+        android:id="@+id/countryGridView"
+        android:layout_width="392dp"
+        android:layout_height="0dp"
+        android:horizontalSpacing="10dp"
+        android:numColumns="2"
+        android:padding="10dp"
+        android:verticalSpacing="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="3dp"
+        android:ems="10"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:inputType="text"
+        android:text="Countries Grid"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/countryGridView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
