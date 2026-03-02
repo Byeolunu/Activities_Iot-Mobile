@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Views</string>
+    <string name="app_name">Activities IOT</string>
     <string name="back_to_animals">Back To Animals</string>
     <string name="greeting">Bonjour %s</string>
     <string name="activities_title">Activités des chiffres</string>
