@@ -23,7 +23,6 @@ public class App_ListGridSpinner extends AppCompatActivity {
 
         Button list = findViewById(R.id.list);
         Button grid = findViewById(R.id.grid);
-        Button spinner = findViewById(R.id.spinner);
         Button recyclerList = findViewById(R.id.recyclerList);
         Button recyclerGrid = findViewById(R.id.recyclerGrid);
 
